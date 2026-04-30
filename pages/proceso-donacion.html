@@ -7,935 +7,128 @@
   <meta name="author" content="Equipo Conectando Colombia">
   <meta name="theme-color" content="#0a1628">
   <title>Proceso de Donación | Conectando a Colombia con Tecnología</title>
-  <link rel="stylesheet" href="../css/styles.css">
-  <style>
-    body { background-color: var(--fondo); }
-
-    .pd-hero {
-      background: linear-gradient(135deg,
-        rgba(10,22,40,0.95) 0%,
-        rgba(13,79,124,0.90) 60%,
-        rgba(26,122,74,0.88) 100%);
-      color: white;
-      text-align: center;
-      padding: 60px 40px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .pd-hero::before {
-      content: '';
-      position: absolute;
-      top: -50%; left: -50%;
-      width: 200%; height: 200%;
-      background:
-        radial-gradient(circle at 30% 50%, rgba(0,212,232,0.08) 0%, transparent 50%),
-        radial-gradient(circle at 70% 50%, rgba(0,230,118,0.06) 0%, transparent 50%);
-      pointer-events: none;
-    }
-
-    .pd-hero-contenido {
-      position: relative;
-      z-index: 1;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .pd-hero img {
-      height: 70px;
-      width: auto;
-      margin: 0 auto 20px;
-      filter: drop-shadow(0 0 10px rgba(0,212,232,0.5));
-    }
-
-    .pd-hero h1 {
-      font-family: var(--fuente-titulo);
-      font-size: 2.5rem;
-      margin-bottom: 14px;
-      text-shadow: 0 2px 15px rgba(0,0,0,0.4);
-    }
-
-    .pd-hero p {
-      font-size: 1.05rem;
-      opacity: 0.88;
-      max-width: 600px;
-      margin: 0 auto 24px;
-      line-height: 1.7;
-    }
-
-    .pd-migas {
-      background: var(--azul-oscuro);
-      padding: 10px 40px;
-      font-size: 0.84rem;
-      border-bottom: 1px solid rgba(0,212,232,0.2);
-    }
-
-    .pd-migas ol {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      list-style: none;
-    }
-
-    .pd-migas ol li::after {
-      content: '›';
-      margin-left: 6px;
-      color: var(--cian);
-      font-weight: bold;
-    }
-
-    .pd-migas ol li:last-child::after { content: ''; }
-
-    .pd-migas a {
-      color: rgba(255,255,255,0.6);
-      text-decoration: none;
-      transition: var(--transicion);
-    }
-
-    .pd-migas a:hover { color: var(--cian); }
-    .pd-migas .miga-actual { color: var(--cian); font-weight: bold; }
-
-    .pd-contenido {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 60px 40px;
-    }
-
-    .pd-intro {
-      background: white;
-      border-radius: var(--radio-grande);
-      padding: 35px 40px;
-      box-shadow: var(--sombra);
-      border-left: 5px solid var(--cian);
-      margin-bottom: 50px;
-    }
-
-    .pd-intro h2 {
-      color: var(--azul-medio);
-      font-family: var(--fuente-titulo);
-      font-size: 1.5rem;
-      margin-bottom: 14px;
-    }
-
-    .pd-intro p {
-      color: var(--texto-suave);
-      font-size: 1rem;
-      line-height: 1.75;
-      margin-bottom: 10px;
-    }
-
-    .pd-seccion-titulo {
-      font-family: var(--fuente-titulo);
-      font-size: 1.8rem;
-      color: var(--azul-medio);
-      text-align: center;
-      margin-bottom: 8px;
-    }
-
-    .pd-seccion-subtitulo {
-      text-align: center;
-      color: var(--texto-suave);
-      font-size: 1rem;
-      margin-bottom: 35px;
-    }
-
-    .pd-pasos {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-      margin-bottom: 55px;
-    }
-
-    .pd-paso {
-      display: flex;
-      gap: 24px;
-      align-items: flex-start;
-      background: white;
-      border-radius: var(--radio);
-      padding: 28px;
-      box-shadow: var(--sombra);
-      transition: var(--transicion);
-      border-right: 4px solid transparent;
-    }
-
-    .pd-paso:hover {
-      transform: translateX(5px);
-      border-right-color: var(--cian);
-      box-shadow: var(--sombra-hover);
-    }
-
-    .pd-paso-numero {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-width: 60px;
-      height: 60px;
-      background: linear-gradient(135deg, var(--azul-medio), var(--cian));
-      color: white;
-      border-radius: 50%;
-      font-size: 1.5rem;
-      font-weight: bold;
-      box-shadow: 0 4px 15px rgba(0,212,232,0.3);
-      flex-shrink: 0;
-    }
-
-    .pd-paso-contenido { flex: 1; }
-
-    .pd-paso-contenido h3 {
-      color: var(--azul-medio);
-      font-size: 1.15rem;
-      margin-bottom: 8px;
-      font-family: var(--fuente-titulo);
-    }
-
-    .pd-paso-contenido p {
-      color: var(--texto-suave);
-      font-size: 0.95rem;
-      line-height: 1.7;
-      margin-bottom: 10px;
-    }
-
-    .pd-paso-detalle {
-      background: var(--cian-suave);
-      border-radius: 8px;
-      padding: 12px 16px;
-      margin-top: 10px;
-    }
-
-    .pd-paso-detalle ul { list-style: none; padding: 0; }
-
-    .pd-paso-detalle ul li {
-      padding: 5px 0;
-      font-size: 0.9rem;
-      color: var(--texto-suave);
-      border-bottom: 1px solid rgba(0,212,232,0.2);
-    }
-
-    .pd-paso-detalle ul li:last-child { border-bottom: none; }
-
-    .pd-paso-tiempo {
-      display: inline-block;
-      background: var(--cian);
-      color: var(--azul-oscuro);
-      padding: 3px 12px;
-      border-radius: 20px;
-      font-size: 0.78rem;
-      font-weight: bold;
-      margin-top: 8px;
-    }
-
-    .pd-dispositivos { margin-bottom: 55px; }
-
-    .pd-disp-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-    }
-
-    .pd-disp-item {
-      background: white;
-      border-radius: var(--radio);
-      padding: 28px 20px;
-      text-align: center;
-      box-shadow: var(--sombra);
-      border-top: 4px solid var(--cian);
-      transition: var(--transicion);
-    }
-
-    .pd-disp-item:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--sombra-hover);
-      border-top-color: var(--verde-colombia);
-    }
-
-    .pd-disp-icono {
-      font-size: 3rem;
-      display: block;
-      margin-bottom: 12px;
-    }
-
-    .pd-disp-item h3 {
-      color: var(--azul-medio);
-      font-size: 1rem;
-      margin-bottom: 8px;
-      font-family: var(--fuente-titulo);
-    }
-
-    .pd-disp-item p {
-      color: var(--texto-suave);
-      font-size: 0.85rem;
-      line-height: 1.6;
-    }
-
-    .pd-disp-badge {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 3px 10px;
-      border-radius: 20px;
-      font-size: 0.75rem;
-      font-weight: bold;
-    }
-
-    .badge-acepta    { background: #e8f5ee; color: var(--verde-colombia); }
-    .badge-condicion { background: #fff3e0; color: #e67e22; }
-
-    .pd-requisitos {
-      background: linear-gradient(135deg, var(--azul-oscuro), var(--azul-medio));
-      border-radius: var(--radio-grande);
-      padding: 40px;
-      margin-bottom: 55px;
-      color: white;
-    }
-
-    .pd-requisitos h2 {
-      color: var(--cian);
-      font-family: var(--fuente-titulo);
-      font-size: 1.8rem;
-      text-align: center;
-      margin-bottom: 8px;
-    }
-
-    .pd-requisitos .subtitulo {
-      text-align: center;
-      opacity: 0.75;
-      margin-bottom: 30px;
-      font-size: 0.95rem;
-    }
-
-    .pd-req-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-
-    .pd-req-item {
-      background: rgba(0,212,232,0.08);
-      border: 1px solid rgba(0,212,232,0.2);
-      border-radius: var(--radio);
-      padding: 22px;
-    }
-
-    .pd-req-item h3 {
-      color: var(--cian);
-      font-size: 1rem;
-      margin-bottom: 10px;
-    }
-
-    .pd-req-item ul { list-style: none; }
-
-    .pd-req-item ul li {
-      padding: 6px 0;
-      font-size: 0.9rem;
-      opacity: 0.85;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .pd-req-item ul li:last-child { border-bottom: none; }
-
-    .pd-impacto { margin-bottom: 55px; }
-
-    .pd-impacto-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-    }
-
-    .pd-impacto-item {
-      background: white;
-      border-radius: var(--radio);
-      padding: 28px 20px;
-      text-align: center;
-      box-shadow: var(--sombra);
-      border-bottom: 4px solid var(--cian);
-    }
-
-    .pd-impacto-numero {
-      display: block;
-      font-size: 2.5rem;
-      font-weight: bold;
-      color: var(--azul-medio);
-      line-height: 1;
-      margin-bottom: 8px;
-    }
-
-    .pd-impacto-texto {
-      color: var(--texto-suave);
-      font-size: 0.9rem;
-      line-height: 1.5;
-    }
-
-    .pd-faq { margin-bottom: 55px; }
-
-    .pd-faq-item {
-      background: white;
-      border-radius: var(--radio);
-      margin-bottom: 12px;
-      box-shadow: var(--sombra);
-      overflow: hidden;
-    }
-
-    .pd-faq-pregunta {
-      width: 100%;
-      background: none;
-      border: none;
-      padding: 20px 24px;
-      text-align: left;
-      font-size: 1rem;
-      font-weight: bold;
-      color: var(--azul-medio);
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-family: var(--fuente-cuerpo);
-      transition: var(--transicion);
-    }
-
-    .pd-faq-pregunta:hover { background: var(--cian-suave); }
-
-    .pd-faq-pregunta .faq-icono {
-      font-size: 1.2rem;
-      transition: var(--transicion);
-      color: var(--cian);
-    }
-
-    .pd-faq-respuesta {
-      display: none;
-      padding: 0 24px 20px;
-      color: var(--texto-suave);
-      font-size: 0.95rem;
-      line-height: 1.7;
-      border-top: 1px solid var(--borde);
-    }
-
-    .pd-faq-respuesta.abierta { display: block; }
-
-    .pd-cta {
-      background: linear-gradient(135deg, var(--verde-colombia), var(--azul-medio));
-      border-radius: var(--radio-grande);
-      padding: 50px 40px;
-      text-align: center;
-      color: white;
-      margin-bottom: 20px;
-    }
-
-    .pd-cta h2 {
-      font-family: var(--fuente-titulo);
-      font-size: 2rem;
-      margin-bottom: 14px;
-    }
-
-    .pd-cta p {
-      font-size: 1.05rem;
-      opacity: 0.9;
-      max-width: 550px;
-      margin: 0 auto 28px;
-      line-height: 1.7;
-    }
-
-    .pd-cta-botones {
-      display: flex;
-      gap: 16px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .pd-footer {
-      background: var(--azul-oscuro);
-      color: rgba(255,255,255,0.6);
-      text-align: center;
-      padding: 20px;
-      font-size: 0.85rem;
-      border-top: 2px solid var(--cian);
-    }
-
-    .pd-footer a { color: var(--cian); text-decoration: none; }
-
-    @media (max-width: 768px) {
-      .pd-hero h1 { font-size: 1.8rem; }
-      .pd-contenido { padding: 40px 20px; }
-      .pd-paso { flex-direction: column; }
-      .pd-paso-numero { align-self: flex-start; }
-      .pd-requisitos { padding: 30px 20px; }
-      .pd-cta { padding: 35px 20px; }
-      .pd-migas { padding: 10px 20px; }
-    }
-
-    @media (max-width: 480px) {
-      .pd-hero { padding: 40px 20px; }
-      .pd-hero h1 { font-size: 1.5rem; }
-      .pd-cta-botones { flex-direction: column; align-items: center; }
-      .btn-principal, .btn-secundario { width: 100%; text-align: center; }
-    }
-  </style>
+  <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
 
-  <!-- ===== HERO ===== -->
+  <!--  MENÚ DE ACCESIBILIDAD -->
+  <div id="menu-accesibilidad" class="menu-accesibilidad">
+    <ul class="lista-accesibilidad">
+      <li><a id="boton-contraste" href="#"><span>◐</span><span> Contraste</span></a></li>
+      <li><a id="boton-reducir" href="#"><span>A-</span><span> Reducir letra</span></a></li>
+      <li><a id="boton-aumentar" href="#"><span>A+</span><span> Aumentar letra</span></a></li>
+    </ul>
+  </div>
+
+  <!-- HERO -->
   <header class="pd-hero">
     <div class="pd-hero-contenido">
-      <img src="../assets/imagenes/logo1.png"
-           alt="Conectando a Colombia con Tecnología">
+      <img src="/assets/imagenes/logo1.png" alt="Conectando a Colombia con Tecnología">
       <h1>Proceso de Donación</h1>
-      <p>Conoce paso a paso cómo llevamos tecnología directamente
-         a los <strong>26 colegios oficiales de Soacha</strong>
-         y sus más de 70.000 estudiantes.</p>
-      <a href="../index.html#inicio" class="btn-secundario">← Volver al Sitio Principal</a>
+      <p>Conoce paso a paso cómo llevamos tecnología directamente a los <strong>26 colegios oficiales de Soacha</strong> y sus más de 70.000 estudiantes.</p>
+      <a href="/index.html" class="btn-secundario">← Volver al Sitio Principal</a>
     </div>
   </header>
 
-  <!-- ===== MIGAS DE PAN ===== -->
-  <nav class="pd-migas" aria-label="Ruta de navegación">
+  <!-- MIGAS DE PAN-->
+  <nav class="pd-migas">
     <ol>
-      <li><a href="../index.html#inicio">Inicio</a></li>
-      <li><a href="../index.html#solucion">Solución</a></li>
-      <li><span class="miga-actual" aria-current="page">Proceso de Donación</span></li>
+      <li><a href="/index.html">Inicio</a></li>
+      <li><a href="/index.html">Solución</a></li>
+      <li><span class="miga-actual">Proceso de Donación</span></li>
     </ol>
   </nav>
 
-  <!-- ===== CONTENIDO PRINCIPAL ===== -->
+  <!-- CONTENIDO PRINCIPAL -->
   <main>
     <div class="pd-contenido">
 
       <!-- INTRODUCCIÓN -->
       <div class="pd-intro">
         <h2>¿Cómo funciona Conectando a Colombia con Tecnología en Soacha?</h2>
-        <p>Somos un puente entre quienes tienen tecnología disponible y los
-           <strong>26 colegios oficiales de Soacha</strong> que más lo necesitan.
-           Nuestro proceso está diseñado para ser
-           <strong>simple, transparente y de alto impacto</strong>.</p>
-        <p>En Soacha, más de <strong>70.000 estudiantes</strong> asisten a colegios
-           oficiales donde la baja apropiación tecnológica, por las condiciones
-           económicas de las familias, limita su formación. Centros digitales
-           implementados en años anteriores quedaron en abandono por falta de
-           mantenimiento. <strong>Tu donación puede cambiar esa realidad.</strong></p>
+        <p>Somos un puente entre quienes tienen tecnología disponible y los <strong>26 colegios oficiales de Soacha</strong> que más lo necesitan. Nuestro proceso está diseñado para ser <strong>simple, transparente y de alto impacto</strong>.</p>
+        <p>En Soacha, más de <strong>70.000 estudiantes</strong> asisten a colegios oficiales donde la baja apropiación tecnológica, por las condiciones económicas de las familias, limita su formación. Centros digitales implementados en años anteriores quedaron en abandono por falta de mantenimiento. <strong>Tu donación puede cambiar esa realidad.</strong></p>
       </div>
 
       <!-- PASOS DETALLADOS -->
-      <section aria-labelledby="titulo-pasos">
-        <h2 class="pd-seccion-titulo" id="titulo-pasos">El Proceso Paso a Paso</h2>
-        <p class="pd-seccion-subtitulo">
-          Desde que decides donar hasta que los estudiantes de Soacha reciben la tecnología
-        </p>
-
+      <section>
+        <h2 class="pd-seccion-titulo">El Proceso Paso a Paso</h2>
+        <p class="pd-seccion-subtitulo">Desde que decides donar hasta que los estudiantes de Soacha reciben la tecnología</p>
         <div class="pd-pasos">
-
-          <div class="pd-paso">
-            <span class="pd-paso-numero" role="img" aria-label="Paso 1">1</span>
-            <div class="pd-paso-contenido">
-              <h3>📋 Registro de la Donación</h3>
-              <p>El donante completa el formulario en nuestra plataforma indicando
-                 sus datos de contacto, el <strong>colegio de Soacha</strong> al
-                 que desea donar y los dispositivos disponibles.</p>
-              <div class="pd-paso-detalle">
-                <ul>
-                  <li>✅ Ingresa tu nombre o razón social</li>
-                  <li>✅ Proporciona correo electrónico y teléfono</li>
-                  <li>✅ Selecciona el tipo de donante</li>
-                  <li>✅ Elige el colegio oficial de Soacha beneficiario</li>
-                  <li>✅ Describe los dispositivos y cantidad a donar</li>
-                </ul>
-              </div>
-              <span class="pd-paso-tiempo">⏱ Tiempo estimado: 5 minutos</span>
-            </div>
-          </div>
-
-          <div class="pd-paso">
-            <span class="pd-paso-numero" role="img" aria-label="Paso 2">2</span>
-            <div class="pd-paso-contenido">
-              <h3>📞 Contacto y Verificación</h3>
-              <p>Nuestro equipo se pone en contacto contigo en máximo
-                 <strong>48 horas hábiles</strong> para verificar la información
-                 y confirmar los detalles de la donación con el colegio seleccionado
-                 de Soacha.</p>
-              <div class="pd-paso-detalle">
-                <ul>
-                  <li>✅ Verificación de identidad del donante</li>
-                  <li>✅ Confirmación del estado de los dispositivos</li>
-                  <li>✅ Coordinación directa con el rector del colegio</li>
-                  <li>✅ Acuerdo de fecha y lugar de entrega en Soacha</li>
-                </ul>
-              </div>
-              <span class="pd-paso-tiempo">⏱ Tiempo estimado: 24-48 horas</span>
-            </div>
-          </div>
-
-          <div class="pd-paso">
-            <span class="pd-paso-numero" role="img" aria-label="Paso 3">3</span>
-            <div class="pd-paso-contenido">
-              <h3>🏫 Preparación de los Dispositivos</h3>
-              <p>Todos los equipos recibidos son preparados antes de su entrega
-                 para garantizar que lleguen en óptimas condiciones a los
-                 estudiantes del colegio seleccionado en Soacha.</p>
-              <div class="pd-paso-detalle">
-                <ul>
-                  <li>✅ Formateo y borrado seguro de datos personales</li>
-                  <li>✅ Instalación de sistema operativo actualizado</li>
-                  <li>✅ Instalación de software educativo básico</li>
-                  <li>✅ Verificación de funcionamiento de cada equipo</li>
-                </ul>
-              </div>
-              <span class="pd-paso-tiempo">⏱ Tiempo estimado: 3-5 días hábiles</span>
-            </div>
-          </div>
-
-          <div class="pd-paso">
-            <span class="pd-paso-numero" role="img" aria-label="Paso 4">4</span>
-            <div class="pd-paso-contenido">
-              <h3>🚚 Entrega en el Colegio de Soacha</h3>
-              <p>Coordinamos la entrega directa en la institución educativa
-                 seleccionada. El donante puede asistir a la entrega y conocer
-                 personalmente a los estudiantes que va a beneficiar.</p>
-              <div class="pd-paso-detalle">
-                <ul>
-                  <li>✅ Entrega directa en el colegio oficial de Soacha</li>
-                  <li>✅ Acta de recibo firmada por rector o coordinador</li>
-                  <li>✅ Certificado de donación entregado al donante</li>
-                  <li>✅ Registro fotográfico del impacto generado</li>
-                </ul>
-              </div>
-              <span class="pd-paso-tiempo">⏱ Tiempo estimado: 5-15 días hábiles</span>
-            </div>
-          </div>
-
-          <div class="pd-paso">
-            <span class="pd-paso-numero" role="img" aria-label="Paso 5">5</span>
-            <div class="pd-paso-contenido">
-              <h3>💚 Seguimiento e Impacto</h3>
-              <p>Realizamos seguimiento del impacto generado en el colegio y
-                 enviamos al donante un informe completo con testimonios de
-                 estudiantes y docentes beneficiados.</p>
-              <div class="pd-paso-detalle">
-                <ul>
-                  <li>✅ Informe de impacto con fotos y testimonios</li>
-                  <li>✅ Número exacto de estudiantes beneficiados</li>
-                  <li>✅ Certificado de Impacto ODS 9 para empresas</li>
-                  <li>✅ Reporte de uso de los dispositivos en el aula</li>
-                </ul>
-              </div>
-              <span class="pd-paso-tiempo">⏱ Seguimiento continuo</span>
-            </div>
-          </div>
-
+          <div class="pd-paso"><span class="pd-paso-numero">1</span><div class="pd-paso-contenido"><h3>📋 Registro de la Donación</h3><p>El donante completa el formulario indicando sus datos, el <strong>colegio de Soacha</strong> y los dispositivos.</p><div class="pd-paso-detalle"><ul><li>✅ Ingresa tu nombre o razón social</li><li>✅ Proporciona correo y teléfono</li><li>✅ Selecciona el tipo de donante</li><li>✅ Elige el colegio oficial de Soacha beneficiario</li><li>✅ Describe los dispositivos y cantidad</li></ul></div><span class="pd-paso-tiempo">⏱ 5 minutos</span></div></div>
+          <div class="pd-paso"><span class="pd-paso-numero">2</span><div class="pd-paso-contenido"><h3>📞 Contacto y Verificación</h3><p>Nuestro equipo te contacta en <strong>48 horas</strong> para verificar la información con el colegio seleccionado.</p><div class="pd-paso-detalle"><ul><li>✅ Verificación de identidad</li><li>✅ Confirmación del estado de los dispositivos</li><li>✅ Coordinación con el rector</li><li>✅ Acuerdo de fecha y lugar de entrega</li></ul></div><span class="pd-paso-tiempo">⏱ 24-48 horas</span></div></div>
+          <div class="pd-paso"><span class="pd-paso-numero">3</span><div class="pd-paso-contenido"><h3>🏫 Preparación de los Dispositivos</h3><p>Formateo, borrado seguro, instalación de sistema operativo y software educativo básico.</p><div class="pd-paso-detalle"><ul><li>✅ Formateo y borrado seguro</li><li>✅ Sistema operativo actualizado</li><li>✅ Software educativo básico</li><li>✅ Verificación de cada equipo</li></ul></div><span class="pd-paso-tiempo">⏱ 3-5 días</span></div></div>
+          <div class="pd-paso"><span class="pd-paso-numero">4</span><div class="pd-paso-contenido"><h3>🚚 Entrega en el Colegio de Soacha</h3><p>Entrega directa en la institución. El donante puede asistir y conocer a los beneficiarios.</p><div class="pd-paso-detalle"><ul><li>✅ Entrega directa en el colegio</li><li>✅ Acta de recibo firmada</li><li>✅ Certificado de donación</li><li>✅ Registro fotográfico</li></ul></div><span class="pd-paso-tiempo">⏱ 5-15 días</span></div></div>
+          <div class="pd-paso"><span class="pd-paso-numero">5</span><div class="pd-paso-contenido"><h3>💚 Seguimiento e Impacto</h3><p>Informe con testimonios, fotos y número de estudiantes beneficiados.</p><div class="pd-paso-detalle"><ul><li>✅ Informe de impacto</li><li>✅ Certificado ODS 9 para empresas</li><li>✅ Reporte de uso en el aula</li></ul></div><span class="pd-paso-tiempo">⏱ Seguimiento continuo</span></div></div>
         </div>
       </section>
 
       <!-- DISPOSITIVOS ACEPTADOS -->
-      <section aria-labelledby="titulo-dispositivos">
-        <h2 class="pd-seccion-titulo" id="titulo-dispositivos">
-          Dispositivos que Aceptamos para los Colegios de Soacha
-        </h2>
-        <p class="pd-seccion-subtitulo">
-          Cualquier tecnología en buen estado puede transformar el aprendizaje
-          de un estudiante soachuno
-        </p>
-
-        <div class="pd-dispositivos">
-          <div class="pd-disp-grid">
-            <div class="pd-disp-item">
-              <span class="pd-disp-icono" aria-hidden="true">💻</span>
-              <h3>Computadores Portátiles</h3>
-              <p>Laptops en buen estado, mínimo 4GB RAM. Ideales para
-                 aulas de informática de los colegios.</p>
-              <span class="pd-disp-badge badge-acepta">✅ Aceptado</span>
-            </div>
-            <div class="pd-disp-item">
-              <span class="pd-disp-icono" aria-hidden="true">🖥️</span>
-              <h3>Computadores de Escritorio</h3>
-              <p>CPU + monitor funcionales. Perfectos para salas
-                 de sistemas de las instituciones educativas.</p>
-              <span class="pd-disp-badge badge-acepta">✅ Aceptado</span>
-            </div>
-            <div class="pd-disp-item">
-              <span class="pd-disp-icono" aria-hidden="true">📱</span>
-              <h3>Tablets</h3>
-              <p>Tablets Android o iPad con pantalla y batería
-                 funcionales para uso educativo en el aula.</p>
-              <span class="pd-disp-badge badge-acepta">✅ Aceptado</span>
-            </div>
-            <div class="pd-disp-item">
-              <span class="pd-disp-icono" aria-hidden="true">📡</span>
-              <h3>Routers y Antenas</h3>
-              <p>Equipos de red para mejorar la conectividad
-                 dentro de los colegios de Soacha.</p>
-              <span class="pd-disp-badge badge-acepta">✅ Aceptado</span>
-            </div>
-            <div class="pd-disp-item">
-              <span class="pd-disp-icono" aria-hidden="true">🖨️</span>
-              <h3>Impresoras</h3>
-              <p>Impresoras funcionales para uso administrativo
-                 y pedagógico en los colegios.</p>
-              <span class="pd-disp-badge badge-acepta">✅ Aceptado</span>
-            </div>
-            <div class="pd-disp-item">
-              <span class="pd-disp-icono" aria-hidden="true">📷</span>
-              <h3>Cámaras y Proyectores</h3>
-              <p>Equipos audiovisuales para fortalecer las clases
-                 y actividades pedagógicas en los colegios.</p>
-              <span class="pd-disp-badge badge-acepta">✅ Aceptado</span>
-            </div>
-          </div>
+      <section>
+        <h2 class="pd-seccion-titulo">Dispositivos que Aceptamos</h2>
+        <p class="pd-seccion-subtitulo">Cualquier tecnología en buen estado puede transformar el aprendizaje</p>
+        <div class="pd-disp-grid">
+          <div class="pd-disp-item"><span class="pd-disp-icono">💻</span><h3>Computadores Portátiles</h3><p>Laptops en buen estado, mínimo 4GB RAM.</p><span class="pd-disp-badge badge-acepta">✅ Aceptado</span></div>
+          <div class="pd-disp-item"><span class="pd-disp-icono">🖥️</span><h3>Computadores de Escritorio</h3><p>CPU + monitor funcionales.</p><span class="pd-disp-badge badge-acepta">✅ Aceptado</span></div>
+          <div class="pd-disp-item"><span class="pd-disp-icono">📱</span><h3>Tablets</h3><p>Android o iPad con pantalla y batería funcionales.</p><span class="pd-disp-badge badge-acepta">✅ Aceptado</span></div>
+          <div class="pd-disp-item"><span class="pd-disp-icono">📡</span><h3>Routers y Antenas</h3><p>Equipos de red para mejorar la conectividad.</p><span class="pd-disp-badge badge-acepta">✅ Aceptado</span></div>
+          <div class="pd-disp-item"><span class="pd-disp-icono">🖨️</span><h3>Impresoras</h3><p>Funcionales para uso administrativo y pedagógico.</p><span class="pd-disp-badge badge-acepta">✅ Aceptado</span></div>
+          <div class="pd-disp-item"><span class="pd-disp-icono">📷</span><h3>Cámaras y Proyectores</h3><p>Equipos audiovisuales para las clases.</p><span class="pd-disp-badge badge-acepta">✅ Aceptado</span></div>
         </div>
       </section>
 
       <!-- REQUISITOS -->
-      <section class="pd-requisitos" aria-labelledby="titulo-requisitos">
-        <h2 id="titulo-requisitos">Requisitos para Donar a los Colegios de Soacha</h2>
+      <section class="pd-requisitos">
+        <h2>Requisitos para Donar</h2>
         <p class="subtitulo">Todo donante debe cumplir con los siguientes criterios</p>
-
         <div class="pd-req-grid">
-          <div class="pd-req-item">
-            <h3>🏢 Empresas Privadas</h3>
-            <ul>
-              <li>NIT y cámara de comercio vigente</li>
-              <li>Carta de intención de donación</li>
-              <li>Inventario de dispositivos a donar</li>
-              <li>Representante legal autorizado</li>
-              <li>Acta de baja de activos (si aplica)</li>
-            </ul>
-          </div>
-          <div class="pd-req-item">
-            <h3>🏛️ Entidades Gubernamentales</h3>
-            <ul>
-              <li>Resolución o acto administrativo</li>
-              <li>Inventario oficial de equipos</li>
-              <li>Autorización del ordenador del gasto</li>
-              <li>Acta de baja de activos públicos</li>
-              <li>Certificado de no utilización</li>
-            </ul>
-          </div>
-          <div class="pd-req-item">
-            <h3>🤝 ONG y Fundaciones</h3>
-            <ul>
-              <li>Personería jurídica vigente</li>
-              <li>Carta de intención firmada</li>
-              <li>Inventario de dispositivos</li>
-              <li>Representante legal autorizado</li>
-            </ul>
-          </div>
-          <div class="pd-req-item">
-            <h3>👤 Personas Naturales</h3>
-            <ul>
-              <li>Documento de identidad vigente</li>
-              <li>Declaración voluntaria de donación</li>
-              <li>Descripción de los dispositivos</li>
-              <li>Mínimo 1 dispositivo funcional</li>
-            </ul>
-          </div>
+          <div class="pd-req-item"><h3>🏢 Empresas Privadas</h3><ul><li>NIT y cámara de comercio vigente</li><li>Carta de intención de donación</li><li>Inventario de dispositivos</li><li>Representante legal autorizado</li><li>Acta de baja de activos (si aplica)</li></ul></div>
+          <div class="pd-req-item"><h3>🏛️ Entidades Gubernamentales</h3><ul><li>Resolución o acto administrativo</li><li>Inventario oficial de equipos</li><li>Autorización del ordenador del gasto</li><li>Acta de baja de activos públicos</li><li>Certificado de no utilización</li></ul></div>
+          <div class="pd-req-item"><h3>🤝 ONG y Fundaciones</h3><ul><li>Personería jurídica vigente</li><li>Carta de intención firmada</li><li>Inventario de dispositivos</li><li>Representante legal autorizado</li></ul></div>
+          <div class="pd-req-item"><h3>👤 Personas Naturales</h3><ul><li>Documento de identidad vigente</li><li>Declaración voluntaria de donación</li><li>Descripción de los dispositivos</li><li>Mínimo 1 dispositivo funcional</li></ul></div>
         </div>
       </section>
 
       <!-- IMPACTO ESPERADO -->
-      <section class="pd-impacto" aria-labelledby="titulo-impacto-pd">
-        <h2 class="pd-seccion-titulo" id="titulo-impacto-pd">
-          Impacto de tu Donación en Soacha
-        </h2>
-        <p class="pd-seccion-subtitulo">
-          Cada dispositivo donado genera un efecto multiplicador en los estudiantes
-          de los colegios oficiales de Soacha
-        </p>
-
+      <section class="pd-impacto">
+        <h2 class="pd-seccion-titulo">Impacto de tu Donación</h2>
+        <p class="pd-seccion-subtitulo">Cada dispositivo donado genera un efecto multiplicador</p>
         <div class="pd-impacto-grid">
-          <div class="pd-impacto-item">
-            <span class="pd-impacto-numero">5+</span>
-            <span class="pd-impacto-texto">
-              estudiantes beneficiados por cada dispositivo donado a un colegio de Soacha
-            </span>
-          </div>
-          <div class="pd-impacto-item">
-            <span class="pd-impacto-numero">48h</span>
-            <span class="pd-impacto-texto">
-              máximo para contactarte tras registrar tu donación
-            </span>
-          </div>
-          <div class="pd-impacto-item">
-            <span class="pd-impacto-numero">26</span>
-            <span class="pd-impacto-texto">
-              colegios oficiales de Soacha disponibles para recibir tu donación
-            </span>
-          </div>
-          <div class="pd-impacto-item">
-            <span class="pd-impacto-numero">ODS 9</span>
-            <span class="pd-impacto-texto">
-              contribuyes directamente al cumplimiento de la Agenda 2030 de la ONU
-            </span>
-          </div>
+          <div class="pd-impacto-item"><span class="pd-impacto-numero">5+</span><span class="pd-impacto-texto">estudiantes beneficiados por cada dispositivo</span></div>
+          <div class="pd-impacto-item"><span class="pd-impacto-numero">48h</span><span class="pd-impacto-texto">máximo para contactarte tras el registro</span></div>
+          <div class="pd-impacto-item"><span class="pd-impacto-numero">26</span><span class="pd-impacto-texto">colegios oficiales de Soacha disponibles</span></div>
+          <div class="pd-impacto-item"><span class="pd-impacto-numero">ODS 9</span><span class="pd-impacto-texto">contribuyes a la Agenda 2030 de la ONU</span></div>
         </div>
       </section>
 
       <!-- PREGUNTAS FRECUENTES -->
-      <section class="pd-faq" aria-labelledby="titulo-faq">
-        <h2 class="pd-seccion-titulo" id="titulo-faq">Preguntas Frecuentes</h2>
-        <p class="pd-seccion-subtitulo">
-          Resolvemos tus dudas sobre el proceso de donación a colegios de Soacha
-        </p>
-
-        <div class="pd-faq-item">
-          <button class="pd-faq-pregunta"
-                  onclick="toggleFaq(this)"
-                  aria-expanded="false">
-            ¿A qué colegios de Soacha van los dispositivos donados?
-            <span class="faq-icono" aria-hidden="true">+</span>
-          </button>
-          <div class="pd-faq-respuesta">
-            Los dispositivos se entregan a las <strong>26 instituciones educativas
-            oficiales</strong> de Soacha, distribuidas en las 6 comunas y los
-            corregimientos rurales del municipio. El donante puede elegir
-            el colegio específico al que desea contribuir, o dejar que nuestro
-            equipo lo asigne según la necesidad más urgente. Priorizamos las
-            instituciones con mayor déficit tecnológico como las ubicadas en
-            Cazucá, Ciudadela Sucre y los corregimientos rurales.
-          </div>
-        </div>
-
-        <div class="pd-faq-item">
-          <button class="pd-faq-pregunta"
-                  onclick="toggleFaq(this)"
-                  aria-expanded="false">
-            ¿Los dispositivos deben estar en perfecto estado?
-            <span class="faq-icono" aria-hidden="true">+</span>
-          </button>
-          <div class="pd-faq-respuesta">
-            No necesariamente perfectos, pero sí <strong>funcionales</strong>.
-            Aceptamos equipos con desgaste normal de uso, siempre que enciendan
-            correctamente, tengan pantalla funcional y batería que cargue.
-            Recuerda que muchos estudiantes de Soacha nunca han usado un computador,
-            por lo que cualquier equipo en buen estado representa una oportunidad
-            enorme para su formación académica.
-          </div>
-        </div>
-
-        <div class="pd-faq-item">
-          <button class="pd-faq-pregunta"
-                  onclick="toggleFaq(this)"
-                  aria-expanded="false">
-            ¿Cómo se coordina la entrega en los colegios de Soacha?
-            <span class="faq-icono" aria-hidden="true">+</span>
-          </button>
-          <div class="pd-faq-respuesta">
-            Una vez verificada la donación, nuestro equipo se comunica directamente
-            con el rector o coordinador del colegio seleccionado. Coordinamos
-            una <strong>fecha y hora de entrega</strong> conveniente para la
-            institución, garantizando que los dispositivos lleguen en perfectas
-            condiciones. Si el donante está en Bogotá o municipios cercanos,
-            puede hacer la entrega directamente en el colegio o podemos coordinar
-            el recogido. La mayoría de entregas se realizan en
-            <strong>menos de 15 días hábiles</strong> después del registro.
-          </div>
-        </div>
-
-        <div class="pd-faq-item">
-          <button class="pd-faq-pregunta"
-                  onclick="toggleFaq(this)"
-                  aria-expanded="false">
-            ¿Recibo algún certificado por donar a un colegio de Soacha?
-            <span class="faq-icono" aria-hidden="true">+</span>
-          </button>
-          <div class="pd-faq-respuesta">
-            Sí. Todas las donaciones reciben un <strong>certificado oficial de
-            donación</strong> con el nombre del colegio beneficiado, la cantidad
-            de dispositivos entregados y el número de estudiantes impactados.
-            Las empresas y entidades gubernamentales reciben adicionalmente un
-            <strong>Certificado de Impacto ODS 9</strong> que puede ser usado
-            en reportes de responsabilidad social empresarial, informes de
-            sostenibilidad y rendición de cuentas ante la Gobernación de
-            Cundinamarca o la Alcaldía de Soacha.
-          </div>
-        </div>
-
-        <div class="pd-faq-item">
-          <button class="pd-faq-pregunta"
-                  onclick="toggleFaq(this)"
-                  aria-expanded="false">
-            ¿Los datos de los dispositivos son borrados antes de entregarlos al colegio?
-            <span class="faq-icono" aria-hidden="true">+</span>
-          </button>
-          <div class="pd-faq-respuesta">
-            Absolutamente. Todos los dispositivos pasan por un proceso de
-            <strong>formateo y borrado seguro de datos</strong> antes de ser
-            entregados a los estudiantes. Esto garantiza la privacidad del
-            donante y que el equipo llegue limpio, listo para usar y con
-            sistema operativo funcional. Adicionalmente, instalamos software
-            educativo básico cuando es posible, para que los estudiantes
-            puedan comenzar a usarlos de inmediato en sus actividades académicas.
-          </div>
-        </div>
-
-        <div class="pd-faq-item">
-          <button class="pd-faq-pregunta"
-                  onclick="toggleFaq(this)"
-                  aria-expanded="false">
-            ¿Por qué donar a Soacha y no a otras zonas del país?
-            <span class="faq-icono" aria-hidden="true">+</span>
-          </button>
-          <div class="pd-faq-respuesta">
-            Soacha es uno de los municipios <strong>más poblados de Colombia</strong>
-            con más de 70.000 estudiantes en colegios oficiales, y al mismo tiempo
-            uno de los que más concentra familias en condición de vulnerabilidad.
-            Su cercanía con Bogotá contrasta con las enormes brechas tecnológicas
-            que enfrentan sus instituciones educativas. Donar en Soacha garantiza
-            <strong>impacto inmediato, verificable y cercano</strong>. Puedes
-            visitar el colegio, ver el resultado de tu donación y conocer a los
-            estudiantes que transformaste con tu apoyo.
-          </div>
-        </div>
-
+      <section class="pd-faq">
+        <h2 class="pd-seccion-titulo">Preguntas Frecuentes</h2>
+        <p class="pd-seccion-subtitulo">Resolvemos tus dudas sobre el proceso de donación</p>
+        <div class="pd-faq-item"><button class="pd-faq-pregunta" onclick="toggleFaq(this)">¿A qué colegios de Soacha van los dispositivos?<span class="faq-icono">+</span></button><div class="pd-faq-respuesta">Se entregan a las <strong>26 instituciones educativas oficiales</strong> de Soacha. El donante puede elegir el colegio o dejar que nuestro equipo lo asigne según la necesidad más urgente.</div></div>
+        <div class="pd-faq-item"><button class="pd-faq-pregunta" onclick="toggleFaq(this)">¿Los dispositivos deben estar en perfecto estado?<span class="faq-icono">+</span></button><div class="pd-faq-respuesta">No necesariamente perfectos, pero sí <strong>funcionales</strong>. Aceptamos equipos con desgaste normal, siempre que enciendan y tengan pantalla y batería funcionales.</div></div>
+        <div class="pd-faq-item"><button class="pd-faq-pregunta" onclick="toggleFaq(this)">¿Cómo se coordina la entrega?<span class="faq-icono">+</span></button><div class="pd-faq-respuesta">Coordinamos directamente con el rector del colegio. Si el donante está en Bogotá o alrededores, puede hacer la entrega personalmente.</div></div>
+        <div class="pd-faq-item"><button class="pd-faq-pregunta" onclick="toggleFaq(this)">¿Recibo algún certificado?<span class="faq-icono">+</span></button><div class="pd-faq-respuesta">Sí. Recibirás un <strong>certificado oficial de donación</strong> con el nombre del colegio y el número de estudiantes impactados. Las empresas reciben un Certificado de Impacto ODS 9.</div></div>
+        <div class="pd-faq-item"><button class="pd-faq-pregunta" onclick="toggleFaq(this)">¿Se borran mis datos de los dispositivos?<span class="faq-icono">+</span></button><div class="pd-faq-respuesta">Absolutamente. Todos los equipos pasan por un <strong>formateo y borrado seguro de datos</strong> antes de ser entregados.</div></div>
+        <div class="pd-faq-item"><button class="pd-faq-pregunta" onclick="toggleFaq(this)">¿Por qué donar a Soacha?<span class="faq-icono">+</span></button><div class="pd-faq-respuesta">Soacha es uno de los municipios más poblados de Colombia con más de 70.000 estudiantes en colegios oficiales y enormes brechas tecnológicas. Tu donación tiene impacto inmediato y verificable.</div></div>
       </section>
 
       <!-- CTA FINAL -->
       <div class="pd-cta">
         <h2>¿Listo para transformar un colegio en Soacha?</h2>
-        <p>Tu donación tecnológica puede cambiar el futuro de estudiantes
-           de los colegios oficiales de Soacha. Cada dispositivo cuenta.</p>
-        <div class="pd-cta-botones">
-          <a href="../index.html#donar"
-             class="btn-principal"
-             aria-label="Ir a registrar donación">
-            💚 Registrar mi Donación
-          </a>
-          <a href="../index.html#inicio"
-             class="btn-secundario"
-             aria-label="Volver al sitio principal">
-            ← Volver al Inicio
-          </a>
-        </div>
+        <p>Tu donación tecnológica puede cambiar el futuro de miles de estudiantes.</p>
+        <div class="pd-cta-botones"><a href="/index.html" class="btn-principal">💚 Registrar mi Donación</a><a href="/index.html" class="btn-secundario">← Volver al Inicio</a></div>
       </div>
 
     </div>
   </main>
 
-  <!-- ===== FOOTER ===== -->
+  <!-- FOOTER -->
   <footer class="pd-footer">
-    <p>
-      © 2026
-      <a href="../index.html#inicio">Conectando a Colombia con Tecnología</a> |
-      Proyecto Académico — ODS 9 |
-      Colegios Oficiales de Soacha, Cundinamarca |
-      Hecho con 💚 por estudiantes colombianos
-    </p>
+    <p>© 2026 <a href="/index.html">Conectando a Colombia con Tecnología</a> | Proyecto Académico — ODS 9 | Colegios Oficiales de Soacha, Cundinamarca | Hecho con 💚 por estudiantes colombianos</p>
   </footer>
 
-  <script>
-    function toggleFaq(btn) {
-      const respuesta = btn.nextElementSibling;
-      const icono     = btn.querySelector('.faq-icono');
-      const abierta   = respuesta.classList.contains('abierta');
-
-      document.querySelectorAll('.pd-faq-respuesta').forEach(r => {
-        r.classList.remove('abierta');
-      });
-      document.querySelectorAll('.pd-faq-pregunta').forEach(b => {
-        b.setAttribute('aria-expanded', 'false');
-        b.querySelector('.faq-icono').textContent = '+';
-      });
-
-      if (!abierta) {
-        respuesta.classList.add('abierta');
-        btn.setAttribute('aria-expanded', 'true');
-        icono.textContent = '−';
-      }
-    }
-  </script>
-
+  <script src="/js/script.js"></script>
+  <script src="/js/proceso-donacion.js"></script>
 </body>
 </html>
