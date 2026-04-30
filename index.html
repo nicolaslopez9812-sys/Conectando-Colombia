@@ -12,673 +12,208 @@
 </head>
 <body>
 
-  <!-- ===== BARRA DE ACCESIBILIDAD ===== -->
-  <div class="accesibilidad-bar" role="toolbar" aria-label="Opciones de accesibilidad">
-    <span>Tamaño de texto:</span>
-    <button onclick="cambiarFuente(-1)" aria-label="Reducir tamaño de fuente">A-</button>
-    <button onclick="cambiarFuente(0)"  aria-label="Tamaño de fuente normal">A</button>
-    <button onclick="cambiarFuente(1)"  aria-label="Aumentar tamaño de fuente">A+</button>
+  <!--  MENÚ DE ACCESIBILIDAD -->
+  <div id="menu-accesibilidad" class="menu-accesibilidad">
+    <ul class="lista-accesibilidad">
+      <li><a id="boton-contraste" href="#"><span>◐</span><span> Contraste</span></a></li>
+      <li><a id="boton-reducir" href="#"><span>A-</span><span> Reducir letra</span></a></li>
+      <li><a id="boton-aumentar" href="#"><span>A+</span><span> Aumentar letra</span></a></li>
+    </ul>
   </div>
 
-  <!-- ===== HEADER Y NAVEGACIÓN ===== -->
+  <!-- HEADER Y NAVEGACIÓN -->
   <header class="header-principal">
     <div class="logo">
-      <img src="assets/imagenes/logo1.png"
-           alt="Conectando a Colombia con Tecnología"
-           class="logo-img">
+      <img src="assets/imagenes/logo1.png" alt="Conectando a Colombia con Tecnología" class="logo-img">
     </div>
-
-    <button class="menu-toggle"
-            aria-label="Abrir menú de navegación"
-            aria-expanded="false"
-            onclick="toggleMenu()">☰</button>
-
-    <nav class="nav-principal" role="navigation" aria-label="Navegación principal">
-      <a href="#" onclick="navegarA('inicio');     return false;">Inicio</a>
-      <a href="#" onclick="navegarA('problema');   return false;">El Problema</a>
-      <a href="#" onclick="navegarA('ods9');       return false;">ODS 9</a>
+    <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false" onclick="toggleMenu()">☰</button>
+    <nav class="nav-principal">
+      <a href="#" onclick="navegarA('inicio'); return false;">Inicio</a>
+      <a href="#" onclick="navegarA('problema'); return false;">El Problema</a>
+      <a href="#" onclick="navegarA('ods9'); return false;">ODS 9</a>
       <a href="#" onclick="navegarA('beneficios'); return false;">Beneficios</a>
-      <a href="#" onclick="navegarA('solucion');   return false;">Solución</a>
-      <a href="#" onclick="navegarA('donar');      return false;">Donar</a>
-      <a href="#" onclick="navegarA('impacto');    return false;">Impacto Global</a>
-      <a href="#" onclick="navegarA('contacto');   return false;">Contacto</a>
-      <a href="#" onclick="navegarA('documento');  return false;">Documento</a>
+      <a href="#" onclick="navegarA('solucion'); return false;">Solución</a>
+      <a href="#" onclick="navegarA('donar'); return false;">Donar</a>
+      <a href="#" onclick="navegarA('impacto'); return false;">Impacto Global</a>
+      <a href="#" onclick="navegarA('contacto'); return false;">Contacto</a>
+      <a href="#" onclick="navegarA('documento'); return false;">Documento</a>
     </nav>
   </header>
 
-  <!-- ===== MIGAS DE PAN ===== -->
-  <nav class="migas-pan" aria-label="Ruta de navegación">
+  <!--  MIGAS DE PAN -->
+  <nav class="migas-pan">
     <ol>
       <li><a href="#" onclick="navegarA('inicio'); return false;">Inicio</a></li>
       <li id="miga-actual" aria-current="page">Inicio</li>
     </ol>
   </nav>
 
-  <!-- ===== CONTENIDO PRINCIPAL ===== -->
-  <main id="contenido-principal" role="main">
+  <!-- CONTENIDO PRINCIPAL -->
+  <main id="contenido-principal">
 
-    <!-- ═══ SECCIÓN 1: INICIO ═══ -->
-    <section id="inicio" class="seccion activa" aria-labelledby="titulo-inicio">
+    <!-- SECCIÓN 1: INICIO -->
+    <section id="inicio" class="seccion activa">
       <div class="hero-contenido">
-
-        <img src="assets/imagenes/logo1.png"
-             alt="Conectando a Colombia con Tecnología — ODS 9"
-             class="hero-logo">
-
+        <img src="assets/imagenes/logo1.png" alt="Conectando a Colombia con Tecnología — ODS 9" class="hero-logo">
         <div class="hero-badge">ODS 9 — Soacha, Cundinamarca 2026</div>
-
-        <h1 id="titulo-inicio">
-          Soacha conectada<br>es Soacha que progresa
-        </h1>
-
-        <p class="hero-subtitulo">
-          Soacha tiene <strong>26 instituciones educativas oficiales</strong> con más de
-          <strong>70.000 estudiantes</strong>. Muchos de ellos no tienen acceso a computadores
-          ni tecnología de calidad. Tu donación puede transformar su futuro.
-        </p>
-
-        <div class="hero-stats" role="list">
-          <div class="stat" role="listitem">
-            <span class="stat-numero">70.000</span>
-            <span class="stat-texto">estudiantes en colegios oficiales</span>
-          </div>
-          <div class="stat" role="listitem">
-            <span class="stat-numero">26</span>
-            <span class="stat-texto">instituciones educativas oficiales</span>
-          </div>
-          <div class="stat" role="listitem">
-            <span class="stat-numero">67</span>
-            <span class="stat-texto">sedes educativas en el municipio</span>
-          </div>
-          <div class="stat" role="listitem">
-            <span class="stat-numero">ODS 9</span>
-            <span class="stat-texto">nuestro compromiso</span>
-          </div>
+        <h1>Soacha conectada<br>es Soacha que progresa</h1>
+        <p class="hero-subtitulo">Soacha tiene <strong>26 instituciones educativas oficiales</strong> con más de <strong>70.000 estudiantes</strong>. Muchos de ellos no tienen acceso a computadores ni tecnología de calidad. Tu donación puede transformar su futuro.</p>
+        <div class="hero-stats">
+          <div class="stat"><span class="stat-numero">70.000</span><span class="stat-texto">estudiantes en colegios oficiales</span></div>
+          <div class="stat"><span class="stat-numero">26</span><span class="stat-texto">instituciones educativas oficiales</span></div>
+          <div class="stat"><span class="stat-numero">67</span><span class="stat-texto">sedes educativas en el municipio</span></div>
+          <div class="stat"><span class="stat-numero">ODS 9</span><span class="stat-texto">nuestro compromiso</span></div>
         </div>
-
         <div class="hero-botones">
-          <a href="#" class="btn-principal"  onclick="navegarA('donar');   return false;">Quiero Donar 💚</a>
-          <a href="#" class="btn-secundario" onclick="navegarA('problema');return false;">Ver el Problema</a>
+          <a href="#" class="btn-principal" onclick="navegarA('donar'); return false;">Quiero Donar 💚</a>
+          <a href="#" class="btn-secundario" onclick="navegarA('problema'); return false;">Ver el Problema</a>
         </div>
-
-        <p class="hero-fuente">
-          Fuente: Secretaría de Educación de Soacha 2026 — DANE — MinTIC
-        </p>
+        <p class="hero-fuente">Fuente: Secretaría de Educación de Soacha 2026 — DANE — MinTIC</p>
       </div>
     </section>
 
-    <!-- ═══ SECCIÓN 2: EL PROBLEMA ═══ -->
-    <section id="problema" class="seccion" aria-labelledby="titulo-problema">
-      <h2 id="titulo-problema">La Brecha Digital en los Colegios de Soacha</h2>
-      <p class="seccion-subtitulo">
-        Miles de estudiantes soachunos no tienen acceso a tecnología de calidad
-        para su formación académica
-      </p>
-
+    <!-- SECCIÓN 2: EL PROBLEMA -->
+    <section id="problema" class="seccion">
+      <h2>La Brecha Digital en los Colegios de Soacha</h2>
+      <p class="seccion-subtitulo">Miles de estudiantes soachunos no tienen acceso a tecnología de calidad para su formación académica</p>
       <div class="problema-stats">
-        <div class="prob-stat critico">
-          <span class="prob-numero">70.000</span>
-          <span class="prob-dept">Estudiantes</span>
-          <span class="prob-label">en colegios oficiales</span>
-        </div>
-        <div class="prob-stat critico">
-          <span class="prob-numero">4.200</span>
-          <span class="prob-dept">Cupos faltantes</span>
-          <span class="prob-label">cada año escolar</span>
-        </div>
-        <div class="prob-stat grave">
-          <span class="prob-numero">67</span>
-          <span class="prob-dept">Sedes educativas</span>
-          <span class="prob-label">con necesidades tech</span>
-        </div>
-        <div class="prob-stat grave">
-          <span class="prob-numero">26</span>
-          <span class="prob-dept">IE Oficiales</span>
-          <span class="prob-label">requieren equipos</span>
-        </div>
+        <div class="prob-stat critico"><span class="prob-numero">70.000</span><span class="prob-dept">Estudiantes</span><span class="prob-label">en colegios oficiales</span></div>
+        <div class="prob-stat critico"><span class="prob-numero">4.200</span><span class="prob-dept">Cupos faltantes</span><span class="prob-label">cada año escolar</span></div>
+        <div class="prob-stat grave"><span class="prob-numero">67</span><span class="prob-dept">Sedes educativas</span><span class="prob-label">con necesidades tech</span></div>
+        <div class="prob-stat grave"><span class="prob-numero">26</span><span class="prob-dept">IE Oficiales</span><span class="prob-label">requieren equipos</span></div>
       </div>
-
       <div class="cards-container">
-        <div class="card" role="article">
-          <span class="card-icono" aria-hidden="true">💻</span>
-          <h3>Sin Dispositivos</h3>
-          <p>Muchos estudiantes de Soacha nunca han tocado un computador portátil.
-             El rector del colegio Turbay Ayala confirmó que la <strong>baja apropiación
-             tecnológica</strong> por condiciones económicas es la principal barrera.</p>
-          <span class="card-fuente">Fuente: LaFM — Educación digital en regiones, marzo 2026</span>
-        </div>
-        <div class="card" role="article">
-          <span class="card-icono" aria-hidden="true">📡</span>
-          <h3>Conectividad Insuficiente</h3>
-          <p>Durante años, los colegios de Soacha tuvieron velocidades de internet
-             de apenas <strong>10 a 30 Mbps</strong>, insuficientes para clases
-             digitales simultáneas con múltiples estudiantes.</p>
-          <span class="card-fuente">Fuente: Gobernación de Cundinamarca — Conectividad escolar 2025</span>
-        </div>
-        <div class="card" role="article">
-          <span class="card-icono" aria-hidden="true">🏚️</span>
-          <h3>Centros Digitales Abandonados</h3>
-          <p>Centros digitales implementados en colegios de Soacha con apoyo del
-             MinTIC <strong>quedaron en abandono</strong> por falta de mantenimiento
-             y recursos para sostenerlos.</p>
-          <span class="card-fuente">Fuente: Noticias Día a Día — Centros digitales Cundinamarca 2025</span>
-        </div>
-        <div class="card" role="article">
-          <span class="card-icono" aria-hidden="true">👨‍👩‍👧</span>
-          <h3>Familias Vulnerables</h3>
-          <p>Soacha es uno de los municipios más poblados de Colombia con alta
-             concentración de familias en condición de vulnerabilidad, lo que impide
-             a los estudiantes tener <strong>tecnología en casa</strong>.</p>
-          <span class="card-fuente">Fuente: Secretaría de Educación de Soacha 2026</span>
-        </div>
-        <div class="card" role="article">
-          <span class="card-icono" aria-hidden="true">📚</span>
-          <h3>Desigualdad Educativa</h3>
-          <p>Estudiantes de colegios privados tienen acceso pleno a tecnología
-             mientras los <strong>70.000 estudiantes</strong> de colegios oficiales
-             de Soacha compiten con recursos digitales limitados y equipos obsoletos.</p>
-          <span class="card-fuente">Fuente: Perfil Sector Educativo Soacha 2024-2027</span>
-        </div>
-        <div class="card" role="article">
-          <span class="card-icono" aria-hidden="true">🎓</span>
-          <h3>Impacto en el Futuro</h3>
-          <p>Jóvenes que terminan bachillerato en Soacha <strong>sin saber usar
-             un computador</strong> quedan en desventaja para el mercado laboral
-             y el acceso a educación superior tecnológica.</p>
-          <span class="card-fuente">Fuente: LaFM — Educación digital en regiones, marzo 2026</span>
-        </div>
+        <div class="card"><span class="card-icono">💻</span><h3>Sin Dispositivos</h3><p>Muchos estudiantes de Soacha nunca han tocado un computador portátil. El rector del colegio Turbay Ayala confirmó que la <strong>baja apropiación tecnológica</strong> por condiciones económicas es la principal barrera.</p><span class="card-fuente">Fuente: LaFM — Educación digital en regiones, marzo 2026</span></div>
+        <div class="card"><span class="card-icono">📡</span><h3>Conectividad Insuficiente</h3><p>Durante años, los colegios de Soacha tuvieron velocidades de internet de apenas <strong>10 a 30 Mbps</strong>, insuficientes para clases digitales simultáneas.</p><span class="card-fuente">Fuente: Gobernación de Cundinamarca — Conectividad escolar 2025</span></div>
+        <div class="card"><span class="card-icono">🏚️</span><h3>Centros Digitales Abandonados</h3><p>Centros digitales implementados en colegios de Soacha con apoyo del MinTIC <strong>quedaron en abandono</strong> por falta de mantenimiento.</p><span class="card-fuente">Fuente: Noticias Día a Día — Centros digitales Cundinamarca 2025</span></div>
+        <div class="card"><span class="card-icono">👨‍👩‍👧</span><h3>Familias Vulnerables</h3><p>Soacha es uno de los municipios más poblados de Colombia con alta concentración de familias en condición de vulnerabilidad, lo que impide a los estudiantes tener <strong>tecnología en casa</strong>.</p><span class="card-fuente">Fuente: Secretaría de Educación de Soacha 2026</span></div>
+        <div class="card"><span class="card-icono">📚</span><h3>Desigualdad Educativa</h3><p>Estudiantes de colegios privados tienen acceso pleno a tecnología mientras los <strong>70.000 estudiantes</strong> de colegios oficiales de Soacha compiten con recursos digitales limitados.</p><span class="card-fuente">Fuente: Perfil Sector Educativo Soacha 2024-2027</span></div>
+        <div class="card"><span class="card-icono">🎓</span><h3>Impacto en el Futuro</h3><p>Jóvenes que terminan bachillerato en Soacha <strong>sin saber usar un computador</strong> quedan en desventaja para el mercado laboral y la educación superior.</p><span class="card-fuente">Fuente: LaFM — Educación digital en regiones, marzo 2026</span></div>
       </div>
     </section>
 
-    <!-- ═══ SECCIÓN 3: ODS 9 ═══ -->
-    <section id="ods9" class="seccion" aria-labelledby="titulo-ods9">
-      <h2 id="titulo-ods9">ODS 9 — Industria, Innovación e Infraestructura</h2>
-      <p class="seccion-subtitulo">
-        Por qué la tecnología educativa en Soacha es un asunto de desarrollo sostenible
-      </p>
-
+    <!-- SECCIÓN 3: ODS 9 -->
+    <section id="ods9" class="seccion">
+      <h2>ODS 9 — Industria, Innovación e Infraestructura</h2>
+      <p class="seccion-subtitulo">Por qué la tecnología educativa en Soacha es un asunto de desarrollo sostenible</p>
       <div class="ods-contenido">
-        <div class="ods-badge-grande" aria-label="Objetivo de Desarrollo Sostenible número 9">
-          <span class="ods-numero">9</span>
-          <span class="ods-nombre">Industria, Innovación e Infraestructura</span>
-          <span class="ods-org">ONU — Agenda 2030</span>
-        </div>
-
+        <div class="ods-badge-grande"><span class="ods-numero">9</span><span class="ods-nombre">Industria, Innovación e Infraestructura</span><span class="ods-org">ONU — Agenda 2030</span></div>
         <div class="ods-info">
-          <div class="ods-descripcion">
-            <h3>¿Qué es el ODS 9 y cómo aplica en Soacha?</h3>
-            <p>El ODS 9 busca construir infraestructuras resilientes, promover la
-            industrialización inclusiva y fomentar la innovación tecnológica. En Soacha,
-            esto se traduce en garantizar que los <strong>70.000 estudiantes</strong>
-            de colegios oficiales tengan acceso real a herramientas tecnológicas para
-            su formación, sin importar su condición económica.</p>
+          <div class="ods-descripcion"><h3>¿Qué es el ODS 9 y cómo aplica en Soacha?</h3><p>El ODS 9 busca construir infraestructuras resilientes, promover la industrialización inclusiva y fomentar la innovación tecnológica. En Soacha, esto se traduce en garantizar que los <strong>70.000 estudiantes</strong> de colegios oficiales tengan acceso real a herramientas tecnológicas para su formación, sin importar su condición económica.</p></div>
+          <div class="ods-metas"><h3>Metas que abordamos en Soacha</h3>
+            <div class="meta-item"><span class="meta-codigo">9.1</span><p>Desarrollar infraestructura tecnológica de calidad en los colegios oficiales de Soacha para apoyar el bienestar educativo de todos los estudiantes con acceso equitativo.</p></div>
+            <div class="meta-item"><span class="meta-codigo">9.4</span><p>Modernizar la infraestructura tecnológica de las 26 instituciones educativas oficiales, priorizando las sedes con mayor necesidad en comunas vulnerables.</p></div>
+            <div class="meta-item"><span class="meta-codigo">9.c</span><p>Aumentar el acceso a las tecnologías de la información en los colegios de Soacha para garantizar que ningún estudiante quede excluido de la era digital.</p></div>
           </div>
-
-          <div class="ods-metas">
-            <h3>Metas que abordamos en Soacha</h3>
-            <div class="meta-item">
-              <span class="meta-codigo">9.1</span>
-              <p>Desarrollar infraestructura tecnológica de calidad en los colegios
-                 oficiales de Soacha para apoyar el bienestar educativo de todos
-                 los estudiantes con acceso equitativo.</p>
-            </div>
-            <div class="meta-item">
-              <span class="meta-codigo">9.4</span>
-              <p>Modernizar la infraestructura tecnológica de las 26 instituciones
-                 educativas oficiales, priorizando las sedes con mayor necesidad
-                 en comunas vulnerables.</p>
-            </div>
-            <div class="meta-item">
-              <span class="meta-codigo">9.c</span>
-              <p>Aumentar el acceso a las tecnologías de la información en los
-                 colegios de Soacha para garantizar que ningún estudiante quede
-                 excluido de la era digital.</p>
-            </div>
-          </div>
-
-          <div class="ods-colombia">
-            <h3>Soacha y el ODS 9 en 2026</h3>
-            <ul role="list">
-              <li>🔹 <strong>70.000</strong> estudiantes en instituciones educativas oficiales</li>
-              <li>🔹 <strong>26</strong> colegios oficiales con <strong>67 sedes</strong> en todo el municipio</li>
-              <li>🔹 Centros digitales <strong>abandonados</strong> por falta de mantenimiento</li>
-              <li>🔹 Baja apropiación tecnológica confirmada por rectores de colegios</li>
-              <li>🔹 Meta nacional: <strong>100%</strong> de colegios con internet en 2026</li>
-            </ul>
-            <span class="card-fuente">Fuente: Secretaría de Educación Soacha; MinTIC; LaFM 2026</span>
-          </div>
+          <div class="ods-colombia"><h3>Soacha y el ODS 9 en 2026</h3><ul><li>🔹 <strong>70.000</strong> estudiantes en instituciones educativas oficiales</li><li>🔹 <strong>26</strong> colegios oficiales con <strong>67 sedes</strong> en todo el municipio</li><li>🔹 Centros digitales <strong>abandonados</strong> por falta de mantenimiento</li><li>🔹 Baja apropiación tecnológica confirmada por rectores de colegios</li><li>🔹 Meta nacional: <strong>100%</strong> de colegios con internet en 2026</li></ul><span class="card-fuente">Fuente: Secretaría de Educación Soacha; MinTIC; LaFM 2026</span></div>
         </div>
       </div>
     </section>
 
-    <!-- ═══ SECCIÓN 4: BENEFICIOS ═══ -->
-    <section id="beneficios" class="seccion seccion-oscura" aria-labelledby="titulo-beneficios">
-      <h2 id="titulo-beneficios">¿Qué gana Soacha con tecnología en sus colegios?</h2>
-      <p class="seccion-subtitulo subtitulo-claro">
-        Cada dispositivo donado multiplica las oportunidades de miles de estudiantes soachunos
-      </p>
-
+    <!-- SECCIÓN 4: BENEFICIOS -->
+    <section id="beneficios" class="seccion seccion-oscura">
+      <h2>¿Qué gana Soacha con tecnología en sus colegios?</h2>
+      <p class="seccion-subtitulo subtitulo-claro">Cada dispositivo donado multiplica las oportunidades de miles de estudiantes soachunos</p>
       <div class="beneficios-grid">
-        <div class="beneficio-item">
-          <span class="beneficio-icono" aria-hidden="true">📈</span>
-          <h3>Mejores Resultados Académicos</h3>
-          <p>Estudiantes con acceso a tecnología mejoran su desempeño en pruebas Saber y
-             tienen <strong>mayor probabilidad</strong> de acceder a educación superior.</p>
-        </div>
-        <div class="beneficio-item">
-          <span class="beneficio-icono" aria-hidden="true">💼</span>
-          <h3>Empleabilidad Futura</h3>
-          <p>Colombia enfrenta una brecha de más de <strong>85.000 profesionales</strong>
-             en tecnología. Los estudiantes de Soacha pueden llenar ese vacío si
-             se forman desde el colegio.</p>
-        </div>
-        <div class="beneficio-item">
-          <span class="beneficio-icono" aria-hidden="true">🎓</span>
-          <h3>Acceso a Educación Superior</h3>
-          <p>Soacha ya tiene <strong>8 instituciones de educación superior</strong>.
-             Estudiantes con competencias digitales pueden aprovechar mejor
-             estas oportunidades universitarias.</p>
-        </div>
-        <div class="beneficio-item">
-          <span class="beneficio-icono" aria-hidden="true">🏘️</span>
-          <h3>Desarrollo Comunitario</h3>
-          <p>Un estudiante conectado lleva el conocimiento a su familia. Las competencias
-             digitales se <strong>multiplican en la comunidad</strong> y reducen
-             la desigualdad en el municipio.</p>
-        </div>
-        <div class="beneficio-item">
-          <span class="beneficio-icono" aria-hidden="true">🔬</span>
-          <h3>Soacha STEM+</h3>
-          <p>Soacha tiene una visión de convertirse en <strong>territorio STEM+</strong>.
-             Donar tecnología a sus colegios es apoyar directamente esa transformación
-             educativa y científica.</p>
-        </div>
-        <div class="beneficio-item">
-          <span class="beneficio-icono" aria-hidden="true">🤝</span>
-          <h3>Responsabilidad Social Real</h3>
-          <p>Tu empresa o entidad contribuye directamente al ODS 9 con impacto
-             <strong>medible y verificable</strong> en un municipio específico,
-             con estudiantes reales y resultados documentados.</p>
-        </div>
+        <div class="beneficio-item"><span class="beneficio-icono">📈</span><h3>Mejores Resultados Académicos</h3><p>Estudiantes con acceso a tecnología mejoran su desempeño en pruebas Saber y tienen <strong>mayor probabilidad</strong> de acceder a educación superior.</p></div>
+        <div class="beneficio-item"><span class="beneficio-icono">💼</span><h3>Empleabilidad Futura</h3><p>Colombia enfrenta una brecha de más de <strong>85.000 profesionales</strong> en tecnología. Los estudiantes de Soacha pueden llenar ese vacío si se forman desde el colegio.</p></div>
+        <div class="beneficio-item"><span class="beneficio-icono">🎓</span><h3>Acceso a Educación Superior</h3><p>Soacha ya tiene <strong>8 instituciones de educación superior</strong>. Estudiantes con competencias digitales pueden aprovechar mejor estas oportunidades universitarias.</p></div>
+        <div class="beneficio-item"><span class="beneficio-icono">🏘️</span><h3>Desarrollo Comunitario</h3><p>Un estudiante conectado lleva el conocimiento a su familia. Las competencias digitales se <strong>multiplican en la comunidad</strong> y reducen la desigualdad en el municipio.</p></div>
+        <div class="beneficio-item"><span class="beneficio-icono">🔬</span><h3>Soacha STEM+</h3><p>Soacha tiene una visión de convertirse en <strong>territorio STEM+</strong>. Donar tecnología a sus colegios es apoyar directamente esa transformación educativa y científica.</p></div>
+        <div class="beneficio-item"><span class="beneficio-icono">🤝</span><h3>Responsabilidad Social Real</h3><p>Tu empresa o entidad contribuye directamente al ODS 9 con impacto <strong>medible y verificable</strong> en un municipio específico, con estudiantes reales y resultados documentados.</p></div>
       </div>
     </section>
 
-    <!-- ═══ SECCIÓN 5: SOLUCIÓN ═══ -->
-    <section id="solucion" class="seccion" aria-labelledby="titulo-solucion">
-      <h2 id="titulo-solucion">Nuestra Solución</h2>
-      <p class="seccion-subtitulo">
-        Conectamos donantes de tecnología con los colegios oficiales de Soacha
-        que más lo necesitan
-      </p>
-
-      <div class="solucion-intro">
-        <p>Somos una plataforma web que <strong>concientiza a empresarios, entidades
-        y ciudadanos</strong> sobre la brecha tecnológica en los colegios oficiales
-        de Soacha, y facilita la <strong>donación de dispositivos tecnológicos</strong>
-        (computadores, tablets, routers, impresoras) directamente a las
-        <strong>26 instituciones educativas oficiales</strong> del municipio.</p>
-      </div>
-
+    <!-- SECCIÓN 5: SOLUCIÓN-->
+    <section id="solucion" class="seccion">
+      <h2>Nuestra Solución</h2>
+      <p class="seccion-subtitulo">Conectamos donantes de tecnología con los colegios oficiales de Soacha que más lo necesitan</p>
+      <div class="solucion-intro"><p>Somos una plataforma web que <strong>concientiza a empresarios, entidades y ciudadanos</strong> sobre la brecha tecnológica en los colegios oficiales de Soacha, y facilita la <strong>donación de dispositivos tecnológicos</strong> (computadores, tablets, routers, impresoras) directamente a las <strong>26 instituciones educativas oficiales</strong> del municipio.</p></div>
       <div class="pasos-container">
-        <div class="paso">
-          <span class="paso-numero" aria-label="Paso 1">1</span>
-          <h3>Registras tu donación</h3>
-          <p>Seleccionas el colegio de Soacha al que quieres donar y describes
-             los dispositivos disponibles en nuestro formulario validado.</p>
-        </div>
-        <div class="paso-flecha" aria-hidden="true">→</div>
-        <div class="paso">
-          <span class="paso-numero" aria-label="Paso 2">2</span>
-          <h3>Verificamos y coordinamos</h3>
-          <p>Nuestro equipo contacta al colegio seleccionado y coordina la
-             entrega directa en la institución educativa de Soacha.</p>
-        </div>
-        <div class="paso-flecha" aria-hidden="true">→</div>
-        <div class="paso">
-          <span class="paso-numero" aria-label="Paso 3">3</span>
-          <h3>Transformamos vidas</h3>
-          <p>Los estudiantes del colegio reciben los dispositivos y tú recibes
-             un certificado de donación con impacto ODS 9 documentado.</p>
-        </div>
+        <div class="paso"><span class="paso-numero">1</span><h3>Registras tu donación</h3><p>Seleccionas el colegio de Soacha al que quieres donar y describes los dispositivos disponibles en nuestro formulario validado.</p></div>
+        <div class="paso-flecha">→</div>
+        <div class="paso"><span class="paso-numero">2</span><h3>Verificamos y coordinamos</h3><p>Nuestro equipo contacta al colegio seleccionado y coordina la entrega directa en la institución educativa de Soacha.</p></div>
+        <div class="paso-flecha">→</div>
+        <div class="paso"><span class="paso-numero">3</span><h3>Transformamos vidas</h3><p>Los estudiantes del colegio reciben los dispositivos y tú recibes un certificado de donación con impacto ODS 9 documentado.</p></div>
       </div>
-
-      <div class="solucion-extra">
-        <a href="pages/proceso-donacion.html" class="btn-principal">Ver Proceso Detallado →</a>
-      </div>
+      <div class="solucion-extra"><a href="pages/proceso-donacion.html" class="btn-principal">Ver Proceso Detallado →</a></div>
     </section>
 
-    <!-- ═══ SECCIÓN 6: FORMULARIO DONACIÓN ═══ -->
-    <section id="donar" class="seccion" aria-labelledby="titulo-donar">
-      <h2 id="titulo-donar">Registra tu Donación</h2>
-      <p class="seccion-subtitulo">
-        Selecciona el colegio de Soacha al que quieres donar y completa el formulario
-      </p>
-
-      <form id="form-donacion"
-            class="formulario"
-            novalidate
-            aria-label="Formulario de donación de dispositivos tecnológicos">
+    <!-- SECCIÓN 6: FORMULARIO DONACIÓN-->
+    <section id="donar" class="seccion">
+      <h2>Registra tu Donación</h2>
+      <p class="seccion-subtitulo">Selecciona el colegio de Soacha al que quieres donar y completa el formulario</p>
+      <form id="form-donacion" class="formulario" novalidate>
         <div class="form-grid">
-
-          <div class="campo-grupo">
-            <label for="nombre-donante">Nombre completo o Razón Social *</label>
-            <input type="text" id="nombre-donante" name="nombre"
-                   placeholder="Ej: Empresa XYZ S.A.S."
-                   aria-required="true" autocomplete="organization">
-            <span class="error-msg" id="error-nombre" role="alert" aria-live="polite"></span>
-          </div>
-
-          <div class="campo-grupo">
-            <label for="email-donante">Correo Electrónico *</label>
-            <input type="email" id="email-donante" name="email"
-                   placeholder="correo@empresa.com"
-                   aria-required="true" autocomplete="email">
-            <span class="error-msg" id="error-email" role="alert" aria-live="polite"></span>
-          </div>
-
-          <div class="campo-grupo">
-            <label for="telefono-donante">Teléfono de Contacto *</label>
-            <input type="tel" id="telefono-donante" name="telefono"
-                   placeholder="Ej: +57 300 123 4567"
-                   aria-required="true" autocomplete="tel">
-            <span class="error-msg" id="error-telefono" role="alert" aria-live="polite"></span>
-          </div>
-
-          <div class="campo-grupo">
-            <label for="tipo-donante">Tipo de Donante *</label>
-            <select id="tipo-donante" name="tipo" aria-required="true">
-              <option value="">Selecciona una opción</option>
-              <option value="empresa">Empresa privada</option>
-              <option value="gobierno">Entidad gubernamental</option>
-              <option value="ong">ONG / Fundación</option>
-              <option value="persona">Persona natural</option>
-            </select>
-            <span class="error-msg" id="error-tipo" role="alert" aria-live="polite"></span>
-          </div>
-
-          <div class="campo-grupo campo-completo">
-            <label for="colegio-destino">Institución Educativa Beneficiaria *</label>
-            <select id="colegio-destino" name="colegio" aria-required="true">
-              <option value="">Selecciona el colegio de Soacha</option>
-              <optgroup label="📍 Comuna 1">
-                <option value="compartir">I.E. Compartir</option>
-                <option value="ciudad-latina">I.E. Ciudad Latina</option>
-                <option value="nuevo-compartir">I.E. Nuevo Compartir</option>
-                <option value="santa-ana">I.E. Santa Ana</option>
-              </optgroup>
-              <optgroup label="📍 Comuna 2">
-                <option value="integrado-soacha">I.E. Integrado de Soacha</option>
-                <option value="general-santander">I.E. General Santander</option>
-              </optgroup>
-              <optgroup label="📍 Comuna 3">
-                <option value="leon-xiii">I.E. León XIII</option>
-                <option value="manuela-beltran">I.E. Manuela Beltrán</option>
-                <option value="la-despensa">I.E. La Despensa</option>
-              </optgroup>
-              <optgroup label="📍 Comuna 4">
-                <option value="julio-turbay">I.E. Julio César Turbay Ayala</option>
-                <option value="gabriel-garcia">I.E. Gabriel García Márquez</option>
-                <option value="luis-carlos-galan">I.E. Luis Carlos Galán</option>
-                <option value="ciudadela-sucre">I.E. Ciudadela Sucre</option>
-                <option value="cazuca">I.E. Cazucá</option>
-                <option value="buenos-aires">I.E. Buenos Aires</option>
-              </optgroup>
-              <optgroup label="📍 Comuna 5">
-                <option value="san-mateo">I.E. San Mateo</option>
-                <option value="el-bosque">I.E. El Bosque</option>
-              </optgroup>
-              <optgroup label="📍 Comuna 6">
-                <option value="ricaurte">I.E. Ricaurte</option>
-                <option value="las-villas">I.E. Las Villas</option>
-                <option value="eduardo-santos">I.E. Eduardo Santos</option>
-              </optgroup>
-              <optgroup label="📍 Sector Rural / Corregimientos">
-                <option value="eugenio-diaz">I.E. Eugenio Díaz Castro</option>
-                <option value="san-bernardino">I.E. San Bernardino</option>
-                <option value="laguna">I.E. Laguna</option>
-                <option value="leon-xiii-rural">I.E. Rural León XIII</option>
-              </optgroup>
-              <optgroup label="📍 Colegios en Administración">
-                <option value="gimnasio-campestre">Colegio Gimnasio Campestre (Administrado)</option>
-                <option value="cualquier-colegio">Donde más se necesite (decisión del equipo)</option>
-              </optgroup>
-            </select>
-            <span class="error-msg" id="error-colegio" role="alert" aria-live="polite"></span>
-          </div>
-
-          <div class="campo-grupo campo-completo">
-            <label for="dispositivos">Dispositivos a Donar *</label>
-            <textarea id="dispositivos" name="dispositivos" rows="3"
-                      placeholder="Ej: 10 computadores portátiles Dell, 5 tablets Samsung, 2 routers, 1 impresora HP..."
-                      aria-required="true"></textarea>
-            <span class="error-msg" id="error-dispositivos" role="alert" aria-live="polite"></span>
-          </div>
-
-          <div class="campo-grupo">
-            <label for="ciudad-donante">Ciudad de donde proviene la donación *</label>
-            <input type="text" id="ciudad-donante" name="ciudad"
-                   placeholder="Ej: Bogotá, Soacha, Medellín..."
-                   aria-required="true">
-            <span class="error-msg" id="error-ciudad" role="alert" aria-live="polite"></span>
-          </div>
-
-          <div class="campo-grupo">
-            <label for="cantidad-dispositivos">Cantidad aproximada de dispositivos *</label>
-            <input type="text" id="cantidad-dispositivos" name="cantidad"
-                   placeholder="Ej: 5, 10, 20 equipos..."
-                   aria-required="true">
-            <span class="error-msg" id="error-cantidad" role="alert" aria-live="polite"></span>
-          </div>
-
+          <div class="campo-grupo"><label for="nombre-donante">Nombre completo o Razón Social *</label><input type="text" id="nombre-donante" placeholder="Ej: Empresa XYZ S.A.S."><span class="error-msg" id="error-nombre"></span></div>
+          <div class="campo-grupo"><label for="email-donante">Correo Electrónico *</label><input type="email" id="email-donante" placeholder="correo@empresa.com"><span class="error-msg" id="error-email"></span></div>
+          <div class="campo-grupo"><label for="telefono-donante">Teléfono de Contacto *</label><input type="tel" id="telefono-donante" placeholder="+57 300 123 4567"><span class="error-msg" id="error-telefono"></span></div>
+          <div class="campo-grupo"><label for="tipo-donante">Tipo de Donante *</label><select id="tipo-donante"><option value="">Selecciona</option><option value="empresa">Empresa privada</option><option value="gobierno">Entidad gubernamental</option><option value="ong">ONG / Fundación</option><option value="persona">Persona natural</option></select><span class="error-msg" id="error-tipo"></span></div>
+          <div class="campo-grupo campo-completo"><label for="colegio-destino">Institución Educativa Beneficiaria *</label><select id="colegio-destino"><option value="">Selecciona el colegio de Soacha</option><optgroup label="📍 Comuna 1"><option value="compartir">I.E. Compartir</option><option value="ciudad-latina">I.E. Ciudad Latina</option><option value="nuevo-compartir">I.E. Nuevo Compartir</option><option value="santa-ana">I.E. Santa Ana</option></optgroup><optgroup label="📍 Comuna 2"><option value="integrado-soacha">I.E. Integrado de Soacha</option><option value="general-santander">I.E. General Santander</option></optgroup><optgroup label="📍 Comuna 3"><option value="leon-xiii">I.E. León XIII</option><option value="manuela-beltran">I.E. Manuela Beltrán</option><option value="la-despensa">I.E. La Despensa</option></optgroup><optgroup label="📍 Comuna 4"><option value="julio-turbay">I.E. Julio César Turbay Ayala</option><option value="gabriel-garcia">I.E. Gabriel García Márquez</option><option value="luis-carlos-galan">I.E. Luis Carlos Galán</option><option value="ciudadela-sucre">I.E. Ciudadela Sucre</option><option value="cazuca">I.E. Cazucá</option><option value="buenos-aires">I.E. Buenos Aires</option></optgroup><optgroup label="📍 Comuna 5"><option value="san-mateo">I.E. San Mateo</option><option value="el-bosque">I.E. El Bosque</option></optgroup><optgroup label="📍 Comuna 6"><option value="ricaurte">I.E. Ricaurte</option><option value="las-villas">I.E. Las Villas</option><option value="eduardo-santos">I.E. Eduardo Santos</option></optgroup><optgroup label="📍 Sector Rural"><option value="eugenio-diaz">I.E. Eugenio Díaz Castro</option><option value="san-bernardino">I.E. San Bernardino</option><option value="laguna">I.E. Laguna</option><option value="leon-xiii-rural">I.E. Rural León XIII</option></optgroup><optgroup label="📍 Colegios en Administración"><option value="gimnasio-campestre">Colegio Gimnasio Campestre</option><option value="cualquier-colegio">Donde más se necesite</option></optgroup></select><span class="error-msg" id="error-colegio"></span></div>
+          <div class="campo-grupo campo-completo"><label for="dispositivos">Dispositivos a Donar *</label><textarea id="dispositivos" rows="3" placeholder="Ej: 10 computadores portátiles Dell, 5 tablets Samsung..."></textarea><span class="error-msg" id="error-dispositivos"></span></div>
+          <div class="campo-grupo"><label for="ciudad-donante">Ciudad de origen *</label><input type="text" id="ciudad-donante" placeholder="Ej: Bogotá, Soacha..."><span class="error-msg" id="error-ciudad"></span></div>
+          <div class="campo-grupo"><label for="cantidad-dispositivos">Cantidad aproximada *</label><input type="text" id="cantidad-dispositivos" placeholder="Ej: 5, 10, 20 equipos"><span class="error-msg" id="error-cantidad"></span></div>
         </div>
-
-        <div class="form-submit">
-          <input type="hidden" id="tipo-donante-texto" name="tipo_donante_texto" value="">
-          <input type="hidden" id="colegio-destino-texto" name="colegio_destino_texto" value="">
-          <p id="estado-donacion" class="error-msg" style="text-align:center;" aria-live="polite"></p>
-          <button type="submit" class="btn-principal btn-grande" aria-label="Enviar formulario de donación">
-            💚 Registrar mi Donación
-          </button>
-        </div>
+        <div class="form-submit"><button type="submit" class="btn-principal btn-grande">💚 Registrar mi Donación</button></div>
       </form>
     </section>
 
-    <!-- ═══ SECCIÓN 7: IMPACTO GLOBAL (API) ═══ -->
-    <section id="impacto" class="seccion" aria-labelledby="titulo-impacto">
-      <h2 id="titulo-impacto">Impacto Global</h2>
-      <p class="seccion-subtitulo">
-        La brecha digital educativa no es solo un problema de Soacha —
-        es un desafío mundial. Explora los datos de cualquier país.
-      </p>
+    <!-- SECCIÓN 7: IMPACTO GLOBAL-->
+<section id="impacto" class="seccion">
+  <h2>Impacto Global — Brecha Digital Educativa</h2>
+  <p class="seccion-subtitulo">Lo que viven los estudiantes de Soacha es un reflejo de una crisis mundial. Consulta los datos reales del Banco Mundial para cualquier país.</p>
+  <div class="api-intro">
+    <p>Ingresa el nombre de un país y compara sus indicadores educativos y digitales con los de Colombia. Datos oficiales de la <strong>API del Banco Mundial — ODS 9</strong>.</p>
+  </div>
+  <div class="api-controles">
+    <label for="buscar-pais" class="sr-only">Buscar país</label>
+    <input type="text" id="buscar-pais" placeholder="🔍 Ej: Colombia, Brasil, México, Argentina...">
+    <button onclick="buscarIndicadoresPais()" class="btn-principal">Consultar Banco Mundial</button>
+  </div>
+  <div id="resultado-api" class="resultado-api" aria-live="polite">
+    <p class="api-placeholder">🌍 Ingresa el nombre de un país para ver sus indicadores de brecha digital y educación</p>
+  </div>
+</section>
 
-      <div class="api-intro">
-        <p>Lo que pasa en los colegios de Soacha es un reflejo de una crisis global.
-           Busca cualquier país y descubre cómo la falta de tecnología afecta
-           la educación en todo el mundo. Juntos podemos construir un futuro
-           más conectado e inclusivo.</p>
-      </div>
-
-      <div class="api-controles">
-        <label for="buscar-pais" class="sr-only">Buscar país</label>
-        <input type="text" id="buscar-pais"
-               placeholder="🔍 Ej: Colombia, Brasil, México, Nigeria..."
-               aria-label="Ingresa el nombre de un país para ver sus datos">
-        <button onclick="buscarPais()" class="btn-principal" aria-label="Buscar datos del país">
-          Buscar País
-        </button>
-      </div>
-
-      <div id="resultado-api"
-           class="resultado-api"
-           aria-live="polite"
-           aria-atomic="true"
-           role="region"
-           aria-label="Resultado de búsqueda de país">
-        <p class="api-placeholder">🌍 Ingresa el nombre de un país para ver su información</p>
-      </div>
-    </section>
-
-    <!-- ═══ SECCIÓN 8: CONTACTO ═══ -->
-    <section id="contacto" class="seccion" aria-labelledby="titulo-contacto">
-      <h2 id="titulo-contacto">Contáctanos</h2>
-      <p class="seccion-subtitulo">
-        ¿Eres empresario, directivo o ciudadano de Soacha y quieres saber más?
-        Escríbenos
-      </p>
-
-      <form  id="form-contacto"
-      class="formulario"
-      action="https://formsubmit.co/conectandoalmundocontecnologia@outlook.com"
-      method="POST"
-      aria-label="Formulario de contacto">
+    <!-- SECCIÓN 8: CONTACTO-->
+    <section id="contacto" class="seccion">
+      <h2>Contáctanos</h2>
+      <p class="seccion-subtitulo">¿Eres empresario, directivo o ciudadano de Soacha y quieres saber más? Escríbenos</p>
+      <form id="form-contacto" class="formulario" action="https://formsubmit.co/conectandoalmundocontecnologia@outlook.com" method="POST">
         <div class="form-grid">
-
-          <div class="campo-grupo">
-            <label for="nombre-contacto">Nombre Completo *</label>
-            <input type="text" id="nombre-contacto" name="nombre"
-                   placeholder="Tu nombre completo"
-                   aria-required="true" autocomplete="name">
-            <span class="error-msg" id="error-nombre-contacto" role="alert" aria-live="polite"></span>
-          </div>
-
-          <div class="campo-grupo">
-            <label for="email-contacto">Correo Electrónico *</label>
-            <input type="email" id="email-contacto" name="email"
-                   placeholder="tu@correo.com"
-                   aria-required="true" autocomplete="email">
-            <span class="error-msg" id="error-email-contacto" role="alert" aria-live="polite"></span>
-          </div>
-
-          <div class="campo-grupo campo-completo">
-            <label for="asunto-contacto">Asunto *</label>
-            <input type="text" id="asunto-contacto" name="asunto"
-                   placeholder="¿En qué podemos ayudarte?"
-                   aria-required="true">
-            <span class="error-msg" id="error-asunto-contacto" role="alert" aria-live="polite"></span>
-          </div>
-
-          <div class="campo-grupo campo-completo">
-            <label for="mensaje-contacto">Mensaje *</label>
-            <textarea id="mensaje-contacto" name="mensaje" rows="5"
-                      placeholder="Escribe tu mensaje aquí..."
-                      aria-required="true"></textarea>
-            <span class="error-msg" id="error-mensaje-contacto" role="alert" aria-live="polite"></span>
-          </div>
-
+          <div class="campo-grupo"><label for="nombre-contacto">Nombre Completo *</label><input type="text" id="nombre-contacto" name="nombre" placeholder="Tu nombre completo"><span class="error-msg" id="error-nombre-contacto"></span></div>
+          <div class="campo-grupo"><label for="email-contacto">Correo Electrónico *</label><input type="email" id="email-contacto" name="email" placeholder="tu@correo.com"><span class="error-msg" id="error-email-contacto"></span></div>
+          <div class="campo-grupo campo-completo"><label for="asunto-contacto">Asunto *</label><input type="text" id="asunto-contacto" name="asunto" placeholder="¿En qué podemos ayudarte?"><span class="error-msg" id="error-asunto-contacto"></span></div>
+          <div class="campo-grupo campo-completo"><label for="mensaje-contacto">Mensaje *</label><textarea id="mensaje-contacto" name="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..."></textarea><span class="error-msg" id="error-mensaje-contacto"></span></div>
         </div>
-
- <div class="form-submit">
-    <input type="hidden" name="_subject" value="Nuevo mensaje desde contacto">
-    <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_autoresponse" value="Gracias por contactarnos. Pronto nos comunicaremos contigo.">
-
-    <button type="submit" class="btn-principal btn-grande" aria-label="Enviar mensaje de contacto">
-        Enviar Mensaje 📩
-    </button>
-</div>
+        <div class="form-submit"><input type="hidden" name="_subject" value="Nuevo mensaje desde contacto"><input type="hidden" name="_captcha" value="false"><input type="hidden" name="_autoresponse" value="Gracias por contactarnos."><button type="submit" class="btn-principal btn-grande">Enviar Mensaje 📩</button></div>
       </form>
     </section>
 
-    <!-- ═══ SECCIÓN 9: DOCUMENTO ═══ -->
-    <section id="documento" class="seccion" aria-labelledby="titulo-documento">
-      <h2 id="titulo-documento">Documento del Proyecto</h2>
-      <p class="seccion-subtitulo">
-        Justificación oficial del proyecto — ODS 9 Soacha 2026
-      </p>
-
+    <!-- SECCIÓN 9: DOCUMENTO-->
+    <section id="documento" class="seccion">
+      <h2>Documento del Proyecto</h2>
+      <p class="seccion-subtitulo">Justificación oficial del proyecto — ODS 9 Soacha 2026</p>
       <div class="documento-contenedor">
-        <div class="documento-info">
-          <div class="doc-badge">
-            <span class="doc-icono">📄</span>
-            <div>
-              <h3>Justificación del Proyecto</h3>
-              <p>Conectando a Colombia con Tecnología — Colegios de Soacha — ODS 9</p>
-            </div>
-          </div>
-          <a href="assets/documento/documento.pdf"
-             download="Justificacion_Conectando_Colombia.pdf"
-             class="btn-principal"
-             aria-label="Descargar documento PDF">
-            ⬇️ Descargar PDF
-          </a>
-        </div>
-
-        <div class="pdf-visor">
-          <iframe
-            src="assets/documento/documento.pdf"
-            title="Documento de justificación del proyecto Conectando a Colombia con Tecnología"
-            aria-label="Visor del documento PDF del proyecto"
-            width="100%"
-            height="700px"
-            type="application/pdf">
-            <p>Tu navegador no puede mostrar el PDF directamente.
-               <a href="assets/documento/documento.pdf">Haz clic aquí para descargarlo</a>.
-            </p>
-          </iframe>
-        </div>
+        <div class="documento-info"><div class="doc-badge"><span class="doc-icono">📄</span><div><h3>Justificación del Proyecto</h3><p>Conectando a Colombia con Tecnología — Colegios de Soacha — ODS 9</p></div></div><a href="assets/documento/documento.pdf" download="Justificacion_Conectando_Colombia.pdf" class="btn-principal">⬇️ Descargar PDF</a></div>
+        <!-- CORRECCIÓN W3C: width y height movidos a style; eliminado contenido de fallback dentro del iframe -->
+        <div class="pdf-visor"><iframe src="assets/documento/Activida Entregable y Experencial entrega 2.pdf" title="Documento del proyecto" style="width:100%; height:700px; border:none;"></iframe></div>
       </div>
     </section>
 
   </main>
 
-  <!-- ===== FOOTER ===== -->
+  <!-- FOOTER -->
   <footer class="footer-principal">
     <div class="footer-contenido">
-
-      <div class="footer-marca">
-        <img src="assets/imagenes/logo1.png"
-             alt="Conectando a Colombia con Tecnología"
-             class="footer-logo">
-        <p>Tecnología para todos los estudiantes.<br>
-           Colegios oficiales de Soacha.<br>
-           Alineados con el ODS 9 de la ONU.<br>
-           Colombia 2026.</p>
-      </div>
-
-      <nav class="mapa-sitio" aria-label="Mapa del sitio web">
-        <h3>Mapa del Sitio</h3>
-        <ul role="list">
-          <li><a href="#" onclick="navegarA('inicio');     return false;">🏠 Inicio</a></li>
-          <li><a href="#" onclick="navegarA('problema');   return false;">⚠️ El Problema</a></li>
-          <li><a href="#" onclick="navegarA('ods9');       return false;">🎯 ODS 9</a></li>
-          <li><a href="#" onclick="navegarA('beneficios'); return false;">✅ Beneficios</a></li>
-          <li><a href="#" onclick="navegarA('solucion');   return false;">💡 Solución</a></li>
-          <li><a href="#" onclick="navegarA('donar');      return false;">💚 Donar</a></li>
-          <li><a href="#" onclick="navegarA('impacto');    return false;">🌍 Impacto Global</a></li>
-          <li><a href="#" onclick="navegarA('contacto');   return false;">📩 Contacto</a></li>
-          <li><a href="#" onclick="navegarA('documento');  return false;">📄 Documento</a></li>
-          <li><a href="pages/proceso-donacion.html">📋 Proceso de Donación</a></li>
-        </ul>
-      </nav>
-
-      <div class="footer-info">
-        <p style="font-size:0.88rem; opacity:0.8; margin-bottom:14px;">
-          🔐 El panel de donaciones funciona solo como vista local de prueba en este navegador.
-        </p>
-        <p style="font-size:0.9rem; margin-bottom:16px;">
-          <a href="pages/admin.html" style="color:var(--cian); font-weight:bold;">Abrir panel local de donaciones</a>
-        </p>
-        <h3>Fuentes de Información</h3>
-        <ul role="list">
-          <li>🏫 Secretaría de Educación de Soacha</li>
-          <li>📊 DANE — dane.gov.co</li>
-          <li>📡 MinTIC — mintic.gov.co</li>
-          <li>🌐 LaFM — Educación digital 2026</li>
-          <li>🇺🇳 ONU — ODS 9 Agenda 2030</li>
-        </ul>
-      </div>
-
+      <div class="footer-marca"><img src="assets/imagenes/logo1.png" alt="Conectando Colombia" class="footer-logo"><p>Tecnología para todos los estudiantes.<br>Colegios oficiales de Soacha.<br>Alineados con el ODS 9 de la ONU.<br>Colombia 2026.</p></div>
+      <nav class="mapa-sitio"><h3>Mapa del Sitio</h3><ul><li><a href="#" onclick="navegarA('inicio'); return false;">🏠 Inicio</a></li><li><a href="#" onclick="navegarA('problema'); return false;">⚠️ El Problema</a></li><li><a href="#" onclick="navegarA('ods9'); return false;">🎯 ODS 9</a></li><li><a href="#" onclick="navegarA('beneficios'); return false;">✅ Beneficios</a></li><li><a href="#" onclick="navegarA('solucion'); return false;">💡 Solución</a></li><li><a href="#" onclick="navegarA('donar'); return false;">💚 Donar</a></li><li><a href="#" onclick="navegarA('impacto'); return false;">🌍 Impacto Global</a></li><li><a href="#" onclick="navegarA('contacto'); return false;">📩 Contacto</a></li><li><a href="#" onclick="navegarA('documento'); return false;">📄 Documento</a></li><li><a href="proceso-donacion.html">📋 Proceso de Donación</a></li></ul></nav>
+      <!-- CORRECCIÓN W3C: <li> suelto envuelto en <ul> -->
+      <div class="footer-info"><ul><li>🔐 <a href="pages/login.html">Panel de Donaciones</a></li></ul><h3>Fuentes de Información</h3><ul><li>🏫 Secretaría de Educación de Soacha</li><li>📊 DANE — dane.gov.co</li><li>📡 MinTIC — mintic.gov.co</li><li>🌐 LaFM — Educación digital 2026</li><li>🇺🇳 ONU — ODS 9 Agenda 2030</li></ul></div>
     </div>
-
-    <div class="footer-bottom">
-      <p>© 2026 Conectando a Colombia con Tecnología |
-         Proyecto Académico — ODS 9 |
-         Colegios Oficiales de Soacha, Cundinamarca |
-         Hecho con 💚 AAA Estudiantes corporacion universitaria minuto de dios</p>
-    </div>
+    <div class="footer-bottom"><p>© 2026 Conectando a Colombia con Tecnología | Proyecto Académico — ODS 9 | Colegios Oficiales de Soacha, Cundinamarca | Hecho con 💚 AAA Estudiantes corporacion universitaria minuto de dios</p></div>
   </footer>
 
-  <script src="js/config.js"></script>
   <script src="js/script.js"></script>
 </body>
 </html>

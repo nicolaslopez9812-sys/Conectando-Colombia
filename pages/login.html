@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iniciar Sesión | Conectando Colombia</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/login.css">
+</head>
+<body class="cuerpo-login">
+
+  <!-- MENÚ DE ACCESIBILIDAD -->
+  <div id="menu-accesibilidad" class="menu-accesibilidad">
+    <ul class="lista-accesibilidad">
+      <li><a id="boton-contraste" href="#"><span>◐</span><span> Contraste</span></a></li>
+      <li><a id="boton-reducir" href="#"><span>A-</span><span> Reducir letra</span></a></li>
+      <li><a id="boton-aumentar" href="#"><span>A+</span><span> Aumentar letra</span></a></li>
+    </ul>
+  </div>
+
+  <div class="contenedor-login">
+    <div class="tarjeta-login">
+      <img src="/assets/imagenes/logo1.png" alt="Conectando Colombia" class="logo-login">
+      <h2>Acceso al Panel de Administración</h2>
+      <p>Ingresa tus credenciales para continuar</p>
+
+      <form id="formulario-login">
+        <div class="campo-grupo">
+          <label for="usuario">Usuario</label>
+          <input type="text" id="usuario" name="usuario" placeholder="admin" required autocomplete="off">
+        </div>
+        <div class="campo-grupo">
+          <label for="contrasena">Contraseña</label>
+          <input type="password" id="contrasena" name="contrasena" placeholder="••••••" required>
+        </div>
+        <div id="error-login" class="error-mensaje" style="display:none;">Usuario o contraseña incorrectos</div>
+        <button type="submit" class="btn-principal btn-grande">Ingresar</button>
+      </form>
+      <p class="ayuda-login">Contacta al administrador si no tienes acceso</p>
+    </div>
+  </div>
+
+  <script src="/js/script.js"></script>
+  <script src="/js/login.js"></script>
+</body>
+</html>
